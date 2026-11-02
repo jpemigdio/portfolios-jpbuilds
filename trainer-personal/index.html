@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafa Almeida | Personal Trainer</title>
+<meta name="description" content="Treino personalizado presencial e online. Plano montado para a sua rotina, com acompanhamento de verdade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800;1,900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --quadra:#1740C9; --piso:#0C1B4D; --marca:#FFD400; --giz:#F3F5F8; --linha:#D5DBE6; --texto:#14213D;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --corpo:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--corpo);color:var(--texto);background:var(--giz);line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--marca);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-style:italic;font-weight:900;line-height:.95;letter-spacing:-.01em}
+h2{font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:12px}
+.btn{display:inline-block;background:var(--marca);color:var(--piso);font-weight:700;text-decoration:none;padding:16px 28px;border-radius:6px;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(12,27,77,.35)}
+.btn.escuro{background:var(--piso);color:#fff}
+ 
+header{position:sticky;top:0;z-index:5;background:var(--giz);border-bottom:1px solid var(--linha)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:var(--display);font-style:italic;font-weight:900;font-size:1.6rem;text-decoration:none}
+nav a{margin-left:22px;text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{text-decoration:underline;text-underline-offset:4px}
+ 
+.hero{background:var(--quadra);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:-10%;right:-10%;bottom:46px;height:14px;background:var(--marca);transform:rotate(-2deg);opacity:.9}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:112px}
+.hero h1{font-size:clamp(3.4rem,9vw,6.6rem);margin-bottom:22px}
+.hero p{max-width:46ch;font-size:1.15rem;margin-bottom:30px;color:#DCE4FF}
+.semana{background:var(--giz);color:var(--texto);border-radius:10px;padding:24px;box-shadow:10px 10px 0 var(--piso)}
+.semana h3{font-size:1.5rem;margin-bottom:4px}
+.semana small{display:block;color:#52607C;margin-bottom:16px;font-size:.9rem}
+.dias{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dias button{font:inherit;font-weight:700;padding:14px 0;border:2px solid var(--linha);background:#fff;border-radius:6px;cursor:pointer;color:var(--texto);transition:background .15s,border-color .15s}
+.dias button[aria-pressed="true"]{background:var(--marca);border-color:var(--piso)}
+.semana output{display:block;margin-top:16px;font-weight:700}
+ 
+section{padding:88px 0}
+.intro{max-width:52ch;color:#44516D;margin-bottom:40px}
+.planos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plano{background:#fff;border:2px solid var(--linha);border-radius:10px;padding:28px;display:flex;flex-direction:column}
+.plano.destaque{border-color:var(--quadra);box-shadow:8px 8px 0 var(--quadra)}
+.plano h3{font-size:2rem;margin-bottom:8px}
+.preco{font-weight:700;font-size:1.4rem;margin:8px 0 14px}
+.preco small{font-weight:400;font-size:.9rem;color:#52607C}
+.plano ul{padding-left:18px;margin-bottom:24px;flex:1}
+.plano li{margin-bottom:6px}
+.plano .btn{text-align:center}
+ 
+.metodo{background:var(--piso);color:#fff}
+.metodo .intro{color:#B9C5EA}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;list-style:none;padding:0;counter-reset:p}
+.passos li{counter-increment:p;border-top:4px solid var(--marca);padding-top:16px}
+.passos li::before{content:counter(p);font-family:var(--display);font-style:italic;font-weight:900;font-size:2.6rem;color:var(--marca);display:block;line-height:1}
+.passos strong{display:block;font-size:1.1rem;margin:6px 0}
+.passos span{color:#B9C5EA;font-size:.96rem}
+ 
+.depo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.depo blockquote{background:#fff;border-left:6px solid var(--marca);padding:22px;border-radius:0 8px 8px 0}
+.depo cite{display:block;margin-top:12px;font-style:normal;font-weight:700;font-size:.92rem}
+ 
+.cta{background:var(--marca);text-align:center}
+.cta h2{font-size:clamp(2.6rem,7vw,4.6rem)}
+.cta p{max-width:46ch;margin:0 auto 28px}
+footer{background:var(--piso);color:#B9C5EA;padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+ 
+@media(max-width:860px){
+  .hero .wrap,.planos,.depo{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr 1fr}
+  nav a:not(.btn){display:none}
+  section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#topo">RAFA ALMEIDA</a>
+    <nav><a href="#planos">Planos</a><a href="#metodo">Como funciona</a><a href="#resultados">Resultados</a>
+    <a class="btn" style="padding:10px 18px;margin-left:22px" href="https://wa.me/5511999999999?text=Oi%2C%20quero%20saber%20mais%20sobre%20os%20treinos" target="_blank" rel="noopener">Falar no WhatsApp</a></nav>
+  </div>
+</header>
+ 
+<main id="topo">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Treino que cabe na sua semana.</h1>
+        <p>Plano montado para o seu corpo, o seu horário e a sua rotina. Presencial ou online, com acompanhamento de verdade e ajustes a cada ciclo.</p>
+        <a class="btn" href="https://wa.me/5511999999999?text=Oi%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener">Agendar avaliação gratuita</a>
+      </div>
+      <div class="semana" aria-label="Monte sua semana de treino">
+        <h3>Monte a sua semana</h3>
+        <small>Toque nos dias em que você consegue treinar.</small>
+        <div class="dias" id="dias">
+          <button aria-pressed="false">Seg</button><button aria-pressed="false">Ter</button><button aria-pressed="false">Qua</button>
+          <button aria-pressed="false">Qui</button><button aria-pressed="false">Sex</button><button aria-pressed="false">Sáb</button><button aria-pressed="false">Dom</button>
+        </div>
+        <output id="saida" aria-live="polite">Escolha ao menos 2 dias para começar.</output>
+      </div>
+    </div>
+  </div>
+ 
+  <section id="planos">
+    <div class="wrap">
+      <h2>Escolha como treinar</h2>
+      <p class="intro">Todos os planos começam com uma avaliação e um treino escrito para o seu objetivo.</p>
+      <div class="planos">
+        <article class="plano">
+          <h3>Online</h3>
+          <p class="preco">R$ 149 <small>/ mês</small></p>
+          <ul><li>Treino no app, com vídeos</li><li>Ajuste de carga a cada 4 semanas</li><li>Suporte por WhatsApp</li></ul>
+          <a class="btn escuro" href="https://wa.me/5511999999999?text=Quero%20o%20plano%20Online" target="_blank" rel="noopener">Quero o online</a>
+        </article>
+        <article class="plano destaque">
+          <h3>Presencial</h3>
+          <p class="preco">R$ 390 <small>/ mês · 2x por semana</small></p>
+          <ul><li>Aulas individuais com correção de execução</li><li>Avaliação física mensal</li><li>Treino extra para fazer sozinho</li></ul>
+          <a class="btn" href="https://wa.me/5511999999999?text=Quero%20o%20plano%20Presencial" target="_blank" rel="noopener">Quero o presencial</a>
+        </article>
+        <article class="plano">
+          <h3>Consultoria</h3>
+          <p class="preco">R$ 249 <small>/ mês</small></p>
+          <ul><li>Treino e orientação alimentar básica</li><li>Revisão quinzenal por vídeo</li><li>Metas e acompanhamento de medidas</li></ul>
+          <a class="btn escuro" href="https://wa.me/5511999999999?text=Quero%20a%20Consultoria" target="_blank" rel="noopener">Quero a consultoria</a>
+        </article>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="metodo" id="metodo">
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <p class="intro">Em poucos dias você sai do “quero começar” para o primeiro treino.</p>
+      <ol class="passos">
+        <li><strong>Conversa inicial</strong><span>Você conta objetivo, rotina e histórico de lesões.</span></li>
+        <li><strong>Avaliação</strong><span>Medidas, mobilidade e teste de força.</span></li>
+        <li><strong>Plano pronto</strong><span>Treino escrito para o seu nível e os seus dias.</span></li>
+        <li><strong>Ajustes</strong><span>Revisão de carga e metas a cada ciclo.</span></li>
+      </ol>
+    </div>
+  </section>
+ 
+  <section id="resultados">
+    <div class="wrap">
+      <h2>Quem treina, fala</h2>
+      <p class="intro">Depoimentos de exemplo para este modelo. Troque pelos reais do cliente.</p>
+      <div class="depo">
+        <blockquote>“Eu achava que não tinha tempo. Com 3 dias na semana, finalmente consegui manter a constância.”<cite>Marina S., 34 anos</cite></blockquote>
+        <blockquote>“A correção da postura acabou com a dor nas costas que eu carregava há anos.”<cite>Carlos T., 47 anos</cite></blockquote>
+        <blockquote>“O treino online é claro e o suporte responde rápido. Já mudei de roupa duas vezes.”<cite>Bianca R., 29 anos</cite></blockquote>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="cta">
+    <div class="wrap">
+      <h2>Sua primeira avaliação é por minha conta.</h2>
+      <p>Chame no WhatsApp, escolha um horário e venha conhecer o método sem compromisso.</p>
+      <a class="btn escuro" href="https://wa.me/5511999999999?text=Oi%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+    </div>
+  </section>
+</main>
+ 
+<footer>
+  <div class="wrap"><span>© 2026 Rafa Almeida Personal Trainer</span><span>CREF 000000-G/SP</span></div>
+</footer>
+ 
+<script>
+(function(){
+  var botoes=document.querySelectorAll('#dias button'), saida=document.getElementById('saida');
+  function atualizar(){
+    var n=document.querySelectorAll('#dias button[aria-pressed="true"]').length;
+    if(n<2){saida.textContent='Escolha ao menos 2 dias para começar.';return;}
+    var nivel=n<=3?'ótimo para começar com consistência':n<=5?'ritmo forte, com dias de descanso planejados':'vamos incluir recuperação ativa';
+    saida.textContent=n+' dias por semana: '+nivel+'.';
+  }
+  botoes.forEach(function(b){b.addEventListener('click',function(){
+    b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');atualizar();
+  });});
+})();
+</script>
+</body>
+</html>
